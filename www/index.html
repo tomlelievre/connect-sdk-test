@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title>Démo Ionic + Chromecast</title>
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <!-- your app's js -->
+    <!--<script src="js/app_beam_media.js"></script>-->
+    <script src="js/app_beam_webapp.js"></script>
+</head>
+<body ng-app="starter">
+
+<ion-pane>
+    <ion-header-bar class="bar-stable">
+        <h1 class="title">Démo Ionic + Chromecast</h1>
+    </ion-header-bar>
+    <ion-content ng-controller="DefaultCtrl as vm">
+        <br/>
+        <button class="button button-positive button-outline button-large" ng-click="vm.cast()">Select a TV</button>
+        <button class="button button-positive button-outline button-large" ng-click="vm.disconnect()">Disconnect
+        </button>
+        <br/>
+        <button class="button button-positive button-outline button-large" ng-click="vm.play()">Play</button>
+        <button class="button button-positive button-outline button-large" ng-click="vm.pause()">Pause</button>
+        <button class="button button-positive button-outline button-large" ng-click="vm.seek()">Seek</button>
+
+        <br/><br/>
+        <div class="list">
+            <div class="item item-input-inset">
+                <label class="item-input-wrapper">
+                    <input type="text" placeholder="Message" ng-model="vm.message">
+                </label>
+                <button class="button button-positive button-outline button-small" ng-click="vm.sendMessage()">Send
+                </button>
+            </div>
+        </div>
+    </ion-content>
+</ion-pane>
+</body>
+</html>
